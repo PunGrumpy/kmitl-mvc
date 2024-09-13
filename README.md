@@ -19,7 +19,7 @@ This project follows a modified Model-View-Controller (MVC) architecture pattern
 - In a RESTful API, the "View" is typically the data sent back to the client.
 - Handled by Elysia.js through route handlers and serialization.
 
-### 🛣️ Routes and Controllers (`src/routes/`)
+### 🛣️ Routes and Controllers (`src/controllers/`)
 
 - Define the API endpoints and handle the request/response cycle.
 - Use models for request validation and response formatting.
@@ -93,8 +93,8 @@ This architecture promotes separation of concerns while keeping related function
 ├── src/
 │   ├── models/
 │   │   └── userModel.ts
-│   ├── routes/
-│   │   └── userRoutes.ts
+│   ├── controllers/
+│   │   └── userControllers.ts
 │   └── services/
 │       └── userService.ts
 ├── prisma/
