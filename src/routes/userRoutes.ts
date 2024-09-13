@@ -1,13 +1,14 @@
 import { Elysia, t } from 'elysia'
 
+import { UserModel } from '@/src/models/userModel'
 import { UserService } from '@/src/services/userService'
-import { CreateUserSchema, UpdateUserSchema } from '@/src/types/user'
 
 export const userRoutes = new Elysia({ prefix: '/users' })
   .use(UserService)
+  .use(UserModel)
   .get('/', ({ User }) => User.findMany())
   .post('/', ({ User, body }) => User.create(body), {
-    body: CreateUserSchema
+    body: 'user.create'
   })
   .get('/:id', ({ User, params: { id } }) => User.findUnique(Number(id)), {
     params: t.Object({
@@ -21,7 +22,7 @@ export const userRoutes = new Elysia({ prefix: '/users' })
       params: t.Object({
         id: t.Numeric()
       }),
-      body: UpdateUserSchema
+      body: 'user.update'
     }
   )
   .delete('/:id', ({ User, params: { id } }) => User.delete(Number(id)), {

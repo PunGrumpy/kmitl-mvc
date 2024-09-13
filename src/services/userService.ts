@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 import { Elysia } from 'elysia'
 
-import type { CreateUserInput, UpdateUserInput } from '@/src/types/user'
+import type { CreateUserInput, UpdateUserInput } from '@/src/models/userModel'
 
 const prisma = new PrismaClient()
 
