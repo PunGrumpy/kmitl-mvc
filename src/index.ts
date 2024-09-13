@@ -1,7 +1,31 @@
-import { Elysia } from "elysia";
+import cors from '@elysiajs/cors'
+import { swagger } from '@elysiajs/swagger'
+import { Elysia } from 'elysia'
+import logixlysia from 'logixlysia'
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+import { userRoutes } from '@/src/routes/userRoutes'
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+
+app.use(
+  logixlysia({
+    config: {
+      showBanner: true,
+      ip: true
+    }
+  })
+)
+app.use(
+  swagger({
+    path: '/',
+    documentation: {
+      info: {
+        title: 'Elysia documentation',
+        version: '0.1.0'
+      }
+    }
+  })
+)
+app.use(cors())
+app.use(userRoutes)
+app.listen(3000)
