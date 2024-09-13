@@ -4,6 +4,43 @@
 
 This project is a robust RESTful API built with Elysia.js, following the enterprise MVC (Model-View-Controller) architecture. It leverages Prisma ORM for efficient database management and uses TypeScript to enhance type safety and developer experience.
 
+## 🧱 MVC Architecture
+
+This project follows a modified Model-View-Controller (MVC) architecture pattern, adapted for a RESTful API using Elysia.js. Here's an overview of each component and its corresponding folder in the project structure:
+
+### 📁 Models (`src/models/`)
+
+- Represent the data structures and business logic of the application.
+- Handle data validation, storage, and retrieval.
+- Example: `User` model in `src/models/user.ts`
+
+### 🖥️ Views (`Swagger UI`)
+
+- In a RESTful API, the "View" is typically the data sent back to the client.
+- Handled by Elysia.js through route handlers and serialization.
+
+### 🛣️ Routes and Controllers (`src/routes/`)
+
+- Define the API endpoints and handle the request/response cycle.
+- Combine routing and controller logic in one place.
+- Handle user input (API requests), process it, and return appropriate responses.
+- Call appropriate service methods.
+- Example: `userRoutes.ts` defines routes for user-related operations and includes the logic to handle these operations.
+
+### 🛠️ Services (`src/services/`)
+
+- Contain business logic that doesn't belong in models or routes.
+- Handle complex operations, often involving multiple models.
+- Example: `UserService` might handle operations like user authentication or complex data manipulations.
+
+### 📝 Types (`src/types/`)
+
+- Define TypeScript interfaces and types used throughout the application.
+- Ensure type safety and improve developer experience.
+- Example: `CreateUserInput` and `UpdateUserInput` types.
+
+This architecture promotes separation of concerns while keeping related functionality (routing and request handling) together, making the codebase organized, maintainable, and scalable. It's a common approach in modern API development, especially with lightweight frameworks like Elysia.js.
+
 ## 🚀 Getting Started
 
 ### 📋 Prerequisites
