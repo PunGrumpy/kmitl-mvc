@@ -22,7 +22,13 @@ app.use(
       info: {
         title: 'Elysia documentation',
         version: '0.1.0'
-      }
+      },
+      tags: [
+        {
+          name: 'User',
+          description: 'User CRUD operations'
+        }
+      ]
     }
   })
 )

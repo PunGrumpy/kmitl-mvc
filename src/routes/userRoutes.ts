@@ -3,7 +3,13 @@ import { Elysia, t } from 'elysia'
 import { UserModel } from '@/src/models/userModel'
 import { UserService } from '@/src/services/userService'
 
-export const userRoutes = new Elysia({ prefix: '/users' })
+export const userRoutes = new Elysia({
+  prefix: '/users',
+  detail: {
+    tags: ['User'],
+    description: 'User CRUD operations'
+  }
+})
   .use(UserService)
   .use(UserModel)
   .get('/', ({ User }) => User.findMany())
