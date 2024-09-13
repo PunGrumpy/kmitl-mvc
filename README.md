@@ -10,9 +10,9 @@ This project follows a modified Model-View-Controller (MVC) architecture pattern
 
 ### 📁 Models (`src/models/`)
 
+- DTO (Data Transfer Object) classes that represent the data structure of the application.
 - Represent the data structures and business logic of the application.
 - Handle data validation, storage, and retrieval.
-- Example: `User` model in `src/models/user.ts`
 
 ### 🖥️ Views (`Swagger UI`)
 
@@ -22,22 +22,14 @@ This project follows a modified Model-View-Controller (MVC) architecture pattern
 ### 🛣️ Routes and Controllers (`src/routes/`)
 
 - Define the API endpoints and handle the request/response cycle.
-- Combine routing and controller logic in one place.
-- Handle user input (API requests), process it, and return appropriate responses.
-- Call appropriate service methods.
-- Example: `userRoutes.ts` defines routes for user-related operations and includes the logic to handle these operations.
+- Use models for request validation and response formatting.
+- Call appropriate service methods to process requests.
 
 ### 🛠️ Services (`src/services/`)
 
 - Contain business logic that doesn't belong in models or routes.
-- Handle complex operations, often involving multiple models.
-- Example: `UserService` might handle operations like user authentication or complex data manipulations.
-
-### 📝 Types (`src/types/`)
-
-- Define TypeScript interfaces and types used throughout the application.
-- Ensure type safety and improve developer experience.
-- Example: `CreateUserInput` and `UpdateUserInput` types.
+- Handle complex operations, often involving database interactions.
+- Use Prisma client for database operations.
 
 This architecture promotes separation of concerns while keeping related functionality (routing and request handling) together, making the codebase organized, maintainable, and scalable. It's a common approach in modern API development, especially with lightweight frameworks like Elysia.js.
 
@@ -99,15 +91,17 @@ This architecture promotes separation of concerns while keeping related function
 ```
 .
 ├── src/
-│   ├── controllers/
 │   ├── models/
+│   │   └── userModel.ts
 │   ├── routes/
-│   ├── services/
-│   └── types/
+│   │   └── userRoutes.ts
+│   └── services/
+│       └── userService.ts
 ├── prisma/
 │   └── schema.prisma
 ├── index.ts
-├── testConnection.ts
+├── .env
+├── package.json
 └── README.md
 ```
 
