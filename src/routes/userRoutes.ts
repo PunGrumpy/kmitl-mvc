@@ -4,6 +4,7 @@ import { UserModel } from '@/src/models/userModel'
 import { UserService } from '@/src/services/userService'
 
 export const userRoutes = new Elysia({
+  name: 'Route.User',
   prefix: '/users',
   detail: {
     tags: ['User'],
