@@ -4,34 +4,59 @@
 
 This project is a robust RESTful API built with Elysia.js, following the enterprise MVC (Model-View-Controller) architecture. It leverages Prisma ORM for efficient database management and uses TypeScript to enhance type safety and developer experience.
 
+1. Create and manage cow data (code, color, age) through CowModel and CowService
+2. Simulate milking and calculate BSOD chances in CowController
+3. Generate milk production reports via MilkProductionService
+4. Display results through GUI using HTML generated from CowView
+5. Manage BSOD status and lemon feeding in CowController
+
 ## 🧱 MVC Architecture
 
 This project follows a modified Model-View-Controller (MVC) architecture pattern, adapted for a RESTful API using Elysia.js. Here's an overview of each component and its corresponding folder in the project structure:
 
 ### 📁 Models (`src/models/`)
 
-- DTO (Data Transfer Object) classes that represent the data structure of the application.
-- Represent the data structures and business logic of the application.
-- Handle data validation, storage, and retrieval.
+- `CowModel.ts` and `MilkProductionModel.ts`
+- Define data structures, validation, and business logic
+- Handle data management, storage, and retrieval
+- Use Elysia.model for schema validation
 
 ### 🖥️ Views (`Swagger UI`)
 
-- In a RESTful API, the "View" is typically the data sent back to the client.
-- Handled by Elysia.js through route handlers and serialization.
+- In a RESTful API, the "View" is the data sent back to the client
+- Managed by Elysia.js through route handlers and data serialization
+- CowView.ts creates HTML templates for displaying cow data and milk production results
+- Swagger UI is used for API documentation
 
 ### 🛣️ Routes and Controllers (`src/controllers/`)
 
-- Define the API endpoints and handle the request/response cycle.
-- Use models for request validation and response formatting.
-- Call appropriate service methods to process requests.
+- `CowController.ts`
+- Defines API endpoints and manages the request/response cycle
+- Uses models for request validation and response formatting
+- Calls appropriate service methods to process requests
 
 ### 🛠️ Services (`src/services/`)
 
-- Contain business logic that doesn't belong in models or routes.
-- Handle complex operations, often involving database interactions.
-- Use Prisma client for database operations.
+- `CowService.ts` and `MilkProductionService.ts`
+- Contain business logic that doesn't belong in models or routes
+- Handle complex operations, often involving database interactions
+- Use Prisma client for database operations
 
-This architecture promotes separation of concerns while keeping related functionality (routing and request handling) together, making the codebase organized, maintainable, and scalable. It's a common approach in modern API development, especially with lightweight frameworks like Elysia.js.
+## 👯 How They Work Together
+
+1. **Controller** receives HTTP requests, calls **Service** to process data
+2. **Service** uses **Model** for data validation and database operations
+3. **Controller** uses **View** (in this case, sending data back) to send response
+4. `index.ts` is the application entry point, configured with Elysia.js, and invokes `CowController`
+
+## 📦 Technologies
+
+- 🦊 [Elysia.js](https://elysiajs.com/): A lightweight, flexible web framework for Node.js
+- 🛠️ [Prisma](https://www.prisma.io/): Modern database toolkit for TypeScript and Node.js
+- 🍞 [Bun](https://bun.sh/): JavaScript runtime for building web applications
+- 🦄 [TypeScript](https://www.typescriptlang.org/): Typed superset of JavaScript
+- 🦭 [MariaDB](https://mariadb.org/): Open-source relational database management system
+- 📦 [Swagger UI](https://swagger.io/tools/swagger-ui/): Open-source tool for API documentation
 
 ## 🚀 Getting Started
 
@@ -107,11 +132,12 @@ This architecture promotes separation of concerns while keeping related function
 
 ## 🔑 API Endpoints
 
-- `GET /users`: Retrieve all users
-- `POST /users`: Create a new user
-- `GET /users/:id`: Retrieve a specific user
-- `PUT /users/:id`: Update a specific user
-- `DELETE /users/:id`: Delete a specific user
+- `GET /api/cows`: Retrieve all cows or find a cow by code
+- `POST /api/cows`: Create a new cow
+- `POST /api/cows/reset-bsod`: Reset BSOD status for all cows
+- `POST /api/cows/:code/add-lemon`: Add lemon to a cow
+- `POST /api/milk/:code`: Milk a cow
+- `GET /api/milk/report`: Get milk production report
 
 For detailed API documentation, visit the Swagger UI at `http://localhost:3000` when the server is running.
 
