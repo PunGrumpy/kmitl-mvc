@@ -16,6 +16,7 @@ export const CowController = new Elysia({ prefix: '/api' })
   // Group for cows
   .group('/cows', app =>
     app
+      // Get all cows or find a cow by code
       .get(
         '/',
         async ({ Cow, query }) => {
@@ -43,6 +44,7 @@ export const CowController = new Elysia({ prefix: '/api' })
           }
         }
       )
+      // Create a new cow
       .post(
         '/',
         async ({ Cow, body }) => {
@@ -57,6 +59,7 @@ export const CowController = new Elysia({ prefix: '/api' })
           }
         }
       )
+      // Update a cow by code
       .post(
         '/reset-bsod',
         async ({ Cow }) => {
@@ -72,6 +75,7 @@ export const CowController = new Elysia({ prefix: '/api' })
           }
         }
       )
+      // Add lemon to a cow by code
       .post(
         '/:code/add-lemon',
         async ({ Cow, params }) => {
@@ -107,6 +111,7 @@ export const CowController = new Elysia({ prefix: '/api' })
   // Group for milk
   .group('/milk', app =>
     app
+      // Milk a cow by code
       .post(
         '/:code',
         async ({ Cow, MilkProduction, params: { code } }) => {
@@ -154,6 +159,7 @@ export const CowController = new Elysia({ prefix: '/api' })
           }
         }
       )
+      // Get milk production report
       .get(
         '/report',
         async ({ MilkProduction, Cow }) => {

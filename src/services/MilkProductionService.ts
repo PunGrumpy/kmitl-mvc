@@ -12,9 +12,11 @@ const prisma = new PrismaClient()
 export const MilkProductionService = new Elysia({
   name: 'Service.MilkProduction'
 }).decorate('MilkProduction', {
+  // Create a new milk production record
   async create(data: CreateMilkProductionInput) {
     return prisma.milkProduction.create({ data })
   },
+  // Get the milk production report (grouped by milk type)
   async getReport(): Promise<MilkProductionReport> {
     const result = await prisma.milkProduction.groupBy({
       by: ['milkType'],
