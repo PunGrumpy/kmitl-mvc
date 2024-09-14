@@ -1,17 +1,17 @@
 export const CowView = {
   renderCowInfo: (cow: any) => `
-  <div class="cow-info bg-white rounded-lg shadow-md p-6 mb-4 ${
+  <div class="cow-info bg-white rounded-lg shadow-sm p-4 mb-4 ${
     cow.isBSOD
-      ? 'border-2 border-blue-500'
+      ? 'border-l-4 border-blue-500'
       : cow.color === 'white'
         ? cow.hasEatenLemon
-          ? 'border-2 border-yellow-500'
+          ? 'border-l-4 border-yellow-500'
           : ''
-        : 'border-2 border-yellow-700'
+        : 'border-l-4 border-yellow-700'
   }">
-    <h2 class="text-2xl font-semibold mb-2">${cow.code}</h2>
-    <div class="grid grid-cols-2 gap-4">
-      <p><span class="font-bold">Color:</span> ${
+    <h2 class="text-xl font-medium mb-2">Cow <span class="bg-gray-200 px-2 py-1 rounded-md">${cow.code}</span></h2>
+    <div class="grid grid-cols-2 gap-2 text-sm">
+      <p><span class="font-medium">Color:</span> ${
         cow.isBSOD
           ? '🔵 Blue (BSOD)'
           : cow.color === 'white'
@@ -20,28 +20,28 @@ export const CowView = {
               : '⚪ White'
             : '🟤 Brown'
       }</p>
-      <p><span class="font-bold">Age:</span> ${cow.age} years, ${
+      <p><span class="font-medium">Age:</span> ${cow.age} years, ${
         cow.ageMonths
       } months</p>
-      <p><span class="font-bold">Milk Count:</span> ${cow.milkCount}</p>
-      <p><span class="font-bold">BSOD:</span> ${
+      <p><span class="font-medium">Milk Count:</span> ${cow.milkCount}</p>
+      <p><span class="font-medium">BSOD:</span> ${
         cow.isBSOD ? '🔵 Yes' : '⚪ No'
       }</p>
     </div>
     ${
       cow.isBSOD
-        ? '<p class="text-red-500 font-bold mt-4">This cow is currently in BSOD state and cannot be milked.</p>'
+        ? '<p class="text-red-500 font-medium mt-2">This cow is currently in BSOD state and cannot be milked.</p>'
         : `
           <div class="flex mt-4 space-x-2">
             <button hx-post="/api/milk/${cow.code}" hx-target="#cow-info" 
-              class="milk-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-              <i class="fas fa-tint mr-2"></i>Milk Cow
+              class="milk-button bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+              <i class="fas fa-tint mr-1"></i>Milk Cow
             </button>
             ${
               cow.color === 'white' && !cow.hasEatenLemon
                 ? `<button hx-post="/api/cows/${cow.code}/add-lemon" hx-target="closest .cow-info" hx-swap="outerHTML"
-                    class="add-lemon-button bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    <i class="fas fa-lemon mr-2"></i>Add Lemon
+                    class="add-lemon-button bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-1 px-3 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
+                    <i class="fas fa-lemon mr-1"></i>Add Lemon
                    </button>`
                 : ''
             }
@@ -52,64 +52,67 @@ export const CowView = {
 `,
 
   renderAllCows: (cows: any[]) => `
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       ${cows.map(cow => CowView.renderCowInfo(cow)).join('')}
     </div>
   `,
 
   renderError: (message: string) => `
-    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
-      <p class="font-bold">Error</p>
+    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded-md" role="alert">
+      <p class="font-medium">Error</p>
       <p>${message}</p>
     </div>
   `,
 
   renderMilkReport: (report: Record<string, number>, cowReport: any[]) => `
-    <h2 class="text-2xl font-semibold mb-4">Milk Production Report</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Total Milk Production:</h3>
-        <ul class="list-disc list-inside">
-          <li>Regular Milk: ${report.regular || 0}</li>
-          <li>Sour Milk: ${report.sour || 0}</li>
-          <li>Chocolate Milk: ${report.chocolate || 0}</li>
-          <li>Soy Milk (BSOD): ${report.soy || 0}</li>
-          <li>Almond Milk (BSOD): ${report.almond || 0}</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Individual Cow Report:</h3>
-        <ul class="list-disc list-inside">
-          ${cowReport
-            .map(
-              cow => `
-            <li>Cow ${cow.code} (${cow.color}): ${cow.milkCount} bottles ${
-              cow.isBSOD ? '🔵' : ''
-            }</li>
-          `
-            )
-            .join('')}
-        </ul>
+    <div class="bg-white rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-medium mb-4">Milk Production Report</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-4 rounded-md">
+          <h3 class="text-lg font-medium mb-3">Total Milk Production</h3>
+          <ul class="space-y-2">
+            ${Object.entries(report)
+              .map(
+                ([type, count]) => `
+              <li class="flex justify-between items-center">
+                <span class="text-gray-600">${type.charAt(0).toUpperCase() + type.slice(1)} Milk:</span>
+                <span class="font-medium ${count > 0 ? 'text-green-600' : 'text-gray-500'}">${count}</span>
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-4 rounded-md">
+          <h3 class="text-lg font-medium mb-3">Individual Cow Report</h3>
+          <ul class="space-y-2 max-h-60 overflow-y-auto">
+            ${cowReport
+              .map(
+                cow => `
+              <li class="flex justify-between items-center">
+                <span class="text-gray-600">Cow <span class="bg-gray-200 px-1 py-0.5 rounded-md ${cow.isBSOD ? 'text-blue-600' : ''}">${cow.code}</span>:</span>
+                <span class="font-medium ${cow.milkCount > 0 ? 'text-green-600' : 'text-gray-500'}">
+                  ${cow.milkCount} bottles
+                </span>
+              </li>
+            `
+              )
+              .join('')}
+          </ul>
+        </div>
       </div>
     </div>
   `,
 
   renderMilkResult: (result: any) => `
-    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
-      <p class="font-bold">Milk Production Result</p>
+    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 rounded-md" role="alert">
+      <p class="font-medium">Milk Production Result</p>
       <p>Milk produced: ${result.milkType}</p>
       ${
         result.isBSOD
-          ? '<p class="font-bold text-red-500">BSOD occurred! This milk cannot be used.</p>'
+          ? '<p class="font-medium text-red-500">BSOD occurred! This cow is now in BSOD state.</p>'
           : ''
       }
-    </div>
-  `,
-
-  renderMessage: (message: string) => `
-    <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
-      <p class="font-bold">Success</p>
-      <p>${message}</p>
     </div>
   `
 }

@@ -49,66 +49,68 @@ const app = new Elysia()
       <script src="https://unpkg.com/htmx.org@1.9.6"></script>
       <script src="https://cdn.tailwindcss.com"></script>
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        body {
+          font-family: 'Poppins', sans-serif;
+          background-color: #f7fafc;
+        }
+        .container {
+          max-width: 800px;
+        }
+      </style>
     </head>
-    <body class="bg-gray-100 min-h-screen">
+    <body class="bg-gray-50 text-gray-800">
       <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">Cow Milk Management</h1>
+        <h1 class="text-3xl font-semibold text-center mb-8 text-indigo-600">Cow Milk Management</h1>
         
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Add New Cow</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 class="text-xl font-medium mb-4">Add New Cow</h2>
           <form hx-post="/api/cows" hx-target="#cow-list" hx-swap="afterbegin" class="space-y-4">
-            <div class="flex flex-wrap -mx-2">
-              <div class="w-full md:w-1/2 px-2 mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="code">
-                  Cow Code
-                </label>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="code">Cow Code</label>
                 <input type="text" id="code" name="code" required
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   pattern="^[1-9][0-9]{7}$" title="Please enter an 8-digit number not starting with 0">
               </div>
-              <div class="w-full md:w-1/2 px-2 mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
-                  Color
-                </label>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="color">Color</label>
                 <select id="color" name="color" required
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
                   <option value="white">White</option>
                   <option value="brown">Brown</option>
                 </select>
               </div>
-              <div class="w-full md:w-1/2 px-2 mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="age">
-                  Age (Years)
-                </label>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="age">Age (Years)</label>
                 <input type="number" id="age" name="age" required min="0" max="10"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
               </div>
-              <div class="w-full md:w-1/2 px-2 mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="ageMonths">
-                  Age (Months)
-                </label>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1" for="ageMonths">Age (Months)</label>
                 <input type="number" id="ageMonths" name="ageMonths" required min="0" max="11"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
               </div>
             </div>
             <div class="flex justify-end">
               <button type="submit"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
                 Add Cow
               </button>
             </div>
           </form>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Find Cow</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 class="text-xl font-medium mb-4">Find Cow</h2>
           <form hx-get="/api/cows" hx-target="#cow-info" class="flex items-center">
             <input type="text" name="code" required
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mr-2"
+              class="flex-grow px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 mr-2"
               pattern="^[1-9][0-9]{7}$" title="Please enter an 8-digit number not starting with 0"
               placeholder="Enter Cow Code">
             <button type="submit"
-              class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
               Find Cow
             </button>
           </form>
@@ -116,19 +118,19 @@ const app = new Elysia()
 
         <div id="cow-info" class="mb-8"></div>
 
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4">Cow List</h2>
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <h2 class="text-xl font-medium mb-4">Cow List</h2>
           <div id="cow-list" hx-get="/api/cows" hx-trigger="load"></div>
         </div>
 
         <div class="text-center mb-8">
           <button hx-post="/api/cows/reset-bsod" hx-target="#cow-list"
-            class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
             Reset All BSOD
           </button>
         </div>
 
-        <div id="milk-report" hx-get="/api/milk/report" hx-trigger="load, every 5s" class="bg-white rounded-lg shadow-md p-6"></div>
+        <div id="milk-report" hx-get="/api/milk/report" hx-trigger="load, every 5s" class="bg-white rounded-lg shadow-sm p-6"></div>
       </div>
 
       <script>
@@ -136,6 +138,7 @@ const app = new Elysia()
           if (event.detail.target.id === 'cow-info' || event.detail.target.id === 'cow-list') {
             const cowInfo = event.detail.target;
             const addLemonButtons = cowInfo.querySelectorAll('.add-lemon-button');
+            const milkButtons = cowInfo.querySelectorAll('.milk-button');
             
             addLemonButtons.forEach((addLemonButton) => {
               addLemonButton.addEventListener('click', function(e) {
@@ -149,6 +152,17 @@ const app = new Elysia()
                 } else {
                   console.error('Invalid cow code:', cowCode);
                 }
+              });
+            });
+
+            milkButtons.forEach((milkButton) => {
+              milkButton.addEventListener('click', function() {
+                this.disabled = true;
+                this.classList.add('opacity-50', 'cursor-not-allowed');
+                setTimeout(() => {
+                  this.disabled = false;
+                  this.classList.remove('opacity-50', 'cursor-not-allowed');
+                }, 2000);
               });
             });
           }
