@@ -1,5 +1,6 @@
 import { Elysia, t } from 'elysia'
 
+// Create the Milk Production Model for validation and documentation
 export const MilkProductionModel = new Elysia({
   name: 'Model.MilkProduction'
 }).model({
@@ -17,12 +18,14 @@ export const MilkProductionModel = new Elysia({
   })
 })
 
+// Define the types for the Milk Production Model (Create)
 export type CreateMilkProductionInput = {
   cowId: string
   milkType: string
   quantity: number
 }
 
+// Define the types for the Milk Production Model (Report)
 export type MilkProductionReport = {
   regular: number
   sour: number

@@ -6,11 +6,14 @@ import { CowService } from '@/src/services/CowService'
 import { MilkProductionService } from '@/src/services/MilkProductionService'
 import { CowView } from '@/src/views/CowView'
 
+// Create the Controller for routing and request handling for Cows and Milk Production
+// Separated into groups for cows and milk
 export const CowController = new Elysia({ prefix: '/api' })
   .use(CowModel)
   .use(MilkProductionModel)
   .use(CowService)
   .use(MilkProductionService)
+  // Group for cows
   .group('/cows', app =>
     app
       .get(
@@ -101,6 +104,7 @@ export const CowController = new Elysia({ prefix: '/api' })
         }
       )
   )
+  // Group for milk
   .group('/milk', app =>
     app
       .post(

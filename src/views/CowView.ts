@@ -1,4 +1,5 @@
 export const CowView = {
+  // Renders the cow information
   renderCowInfo: (cow: any) => `
   <div class="cow-info bg-white rounded-lg shadow-sm p-4 mb-4 ${
     cow.isBSOD
@@ -51,12 +52,14 @@ export const CowView = {
   </div>
 `,
 
+  // Renders the form to add a new cow
   renderAllCows: (cows: any[]) => `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       ${cows.map(cow => CowView.renderCowInfo(cow)).join('')}
     </div>
   `,
 
+  // Renders the form to add a new cow
   renderError: (message: string) => `
     <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 rounded-md" role="alert">
       <p class="font-medium">Error</p>
@@ -64,6 +67,7 @@ export const CowView = {
     </div>
   `,
 
+  // Renders the form to add a new cow
   renderMilkReport: (report: Record<string, number>, cowReport: any[]) => `
     <div class="bg-white rounded-lg shadow-sm p-6">
       <h2 class="text-xl font-medium mb-4">Milk Production Report</h2>
@@ -104,6 +108,7 @@ export const CowView = {
     </div>
   `,
 
+  // Renders the form to add a new cow
   renderMilkResult: (result: any) => `
     <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 rounded-md" role="alert">
       <p class="font-medium">Milk Production Result</p>
@@ -116,6 +121,7 @@ export const CowView = {
     </div>
   `,
 
+  // Renders the form to add a new cow
   renderMessage: (message: string) => `
     <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
       <p class="font-bold">Success</p>

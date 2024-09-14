@@ -6,6 +6,7 @@ import logixlysia from 'logixlysia'
 
 import { CowController } from '@/src/controllers/CowController'
 
+// Create the Elysia App
 const app = new Elysia()
   .use(
     logixlysia({

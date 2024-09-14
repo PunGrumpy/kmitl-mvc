@@ -1,5 +1,6 @@
 import { Elysia, t } from 'elysia'
 
+// Create the Cow Model for validation and documentation
 export const CowModel = new Elysia({ name: 'Model.Cow' }).model({
   'cow.create': t.Object({
     code: t.String({ pattern: '^[1-9][0-9]{7}$' }),
@@ -18,6 +19,7 @@ export const CowModel = new Elysia({ name: 'Model.Cow' }).model({
   })
 })
 
+// Define the types for the Cow Model (Create)
 export type CreateCowInput = {
   code: string
   color: 'white' | 'brown'
@@ -25,6 +27,7 @@ export type CreateCowInput = {
   ageMonths: number
 }
 
+// Define the types for the Cow Model (Update)
 export type UpdateCowInput = Partial<CreateCowInput> & {
   milkCount?: number
   isBSOD?: boolean

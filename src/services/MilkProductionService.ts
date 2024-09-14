@@ -4,10 +4,11 @@ import { Elysia } from 'elysia'
 import {
   CreateMilkProductionInput,
   MilkProductionReport
-} from '../models/MilkProductionModel'
+} from '@/src/models/MilkProductionModel'
 
 const prisma = new PrismaClient()
 
+// Create the Milk Production Service working with Prisma
 export const MilkProductionService = new Elysia({
   name: 'Service.MilkProduction'
 }).decorate('MilkProduction', {

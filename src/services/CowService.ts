@@ -5,6 +5,7 @@ import { CreateCowInput, UpdateCowInput } from '@/src/models/CowModel'
 
 const prisma = new PrismaClient()
 
+// Create the Cow Service working with Prisma
 export const CowService = new Elysia({ name: 'Service.Cow' }).decorate('Cow', {
   async findMany() {
     return prisma.cow.findMany()
