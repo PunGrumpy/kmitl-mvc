@@ -16,7 +16,13 @@ export const CowService = new Elysia({ name: 'Service.Cow' }).decorate('Cow', {
     return prisma.cow.findUnique({ where: { code } })
   },
   async update(code: string, data: UpdateCowInput) {
-    return prisma.cow.update({ where: { code }, data })
+    return prisma.cow.update({
+      where: { code },
+      data: {
+        ...data,
+        hasEatenLemon: data.hasEatenLemon ?? undefined
+      }
+    })
   },
   async resetAllBSOD() {
     return prisma.cow.updateMany({

@@ -13,7 +13,8 @@ export const CowModel = new Elysia({ name: 'Model.Cow' }).model({
     age: t.Optional(t.Number({ minimum: 0, maximum: 10 })),
     ageMonths: t.Optional(t.Number({ minimum: 0, maximum: 11 })),
     milkCount: t.Optional(t.Number()),
-    isBSOD: t.Optional(t.Boolean())
+    isBSOD: t.Optional(t.Boolean()),
+    hasEatenLemon: t.Optional(t.Boolean())
   })
 })
 
@@ -27,4 +28,5 @@ export type CreateCowInput = {
 export type UpdateCowInput = Partial<CreateCowInput> & {
   milkCount?: number
   isBSOD?: boolean
+  hasEatenLemon?: boolean
 }

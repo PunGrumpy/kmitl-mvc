@@ -69,12 +69,43 @@ export const CowController = new Elysia({ prefix: '/api' })
           }
         }
       )
+      .post(
+        '/:code/add-lemon',
+        async ({ Cow, params }) => {
+          const { code } = params
+          if (!code || !/^[1-9][0-9]{7}$/.test(code)) {
+            return CowView.renderError(
+              'Invalid cow code. Must be 8 digits and not start with 0.'
+            )
+          }
+
+          const cow = await Cow.findByCode(code)
+          if (!cow) return CowView.renderError('Cow not found')
+          if (cow.isBSOD) return CowView.renderError('Cow is in BSOD state')
+          if (cow.color !== 'white')
+            return CowView.renderError('Only white cows can eat lemons')
+          if (cow.hasEatenLemon)
+            return CowView.renderError('This cow has already eaten a lemon')
+
+          const updatedCow = await Cow.update(code, { hasEatenLemon: true })
+          return CowView.renderCowInfo(updatedCow)
+        },
+        {
+          params: t.Object({
+            code: t.String()
+          }),
+          detail: {
+            summary: 'Add lemon to a cow',
+            tags: ['Cow']
+          }
+        }
+      )
   )
   .group('/milk', app =>
     app
       .post(
         '/:code',
-        async ({ Cow, MilkProduction, params: { code }, query: { lemon } }) => {
+        async ({ Cow, MilkProduction, params: { code } }) => {
           const cow = await Cow.findByCode(code)
           if (!cow) return CowView.renderError('Cow not found')
           if (cow.isBSOD) return CowView.renderError('Cow is in BSOD state')
@@ -82,7 +113,7 @@ export const CowController = new Elysia({ prefix: '/api' })
           let milkType = cow.color === 'white' ? 'regular' : 'chocolate'
           let isBSOD = false
 
-          if (cow.color === 'white' && !lemon) {
+          if (cow.color === 'white' && !cow.hasEatenLemon) {
             const bsodChance = 0.005 * cow.ageMonths
             if (Math.random() < bsodChance) {
               milkType = 'soy'
@@ -96,7 +127,7 @@ export const CowController = new Elysia({ prefix: '/api' })
             }
           }
 
-          if (lemon && cow.color === 'white') {
+          if (cow.hasEatenLemon && cow.color === 'white') {
             milkType = 'sour'
           }
 
@@ -113,9 +144,6 @@ export const CowController = new Elysia({ prefix: '/api' })
           params: t.Object({
             code: t.String({ pattern: '^[1-9][0-9]{7}$' })
           }),
-          query: t.Object({
-            lemon: t.Optional(t.Boolean())
-          }),
           detail: {
             summary: 'Milk a cow',
             tags: ['Milk']
@@ -130,7 +158,8 @@ export const CowController = new Elysia({ prefix: '/api' })
           const cowReport = cows.map(cow => ({
             code: cow.code,
             color: cow.color,
-            milkCount: cow.milkCount
+            milkCount: cow.milkCount,
+            isBSOD: cow.isBSOD
           }))
           return CowView.renderMilkReport(report, cowReport)
         },

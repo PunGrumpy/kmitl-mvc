@@ -28,7 +28,13 @@ export const MilkProductionService = new Elysia({
           item._sum.quantity || 0
         return acc
       },
-      { regular: 0, chocolate: 0, soy: 0, almond: 0 } as MilkProductionReport
+      {
+        regular: 0,
+        sour: 0,
+        chocolate: 0,
+        soy: 0,
+        almond: 0
+      } as MilkProductionReport
     )
   }
 })
