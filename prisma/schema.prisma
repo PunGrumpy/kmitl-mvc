@@ -14,13 +14,14 @@ datasource db {
 }
 
 model Cow {
-  id        String  @id @default(uuid())
-  code      String  @unique
-  color     String
-  age       Int
-  ageMonths Int
-  milkCount Int     @default(0)
-  isBSOD    Boolean @default(false)
+  id            String  @id @default(uuid())
+  code          String  @unique
+  color         String
+  age           Int
+  ageMonths     Int
+  milkCount     Int     @default(0)
+  isBSOD        Boolean @default(false)
+  hasEatenLemon Boolean @default(false)
 }
 
 model MilkProduction {
