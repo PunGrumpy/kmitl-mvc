@@ -13,8 +13,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Cow {
+  id        String  @id @default(uuid())
+  code      String  @unique
+  color     String
+  age       Int
+  ageMonths Int
+  milkCount Int     @default(0)
+  isBSOD    Boolean @default(false)
+}
+
+model MilkProduction {
+  id        String   @id @default(uuid())
+  cowId     String
+  milkType  String
+  quantity  Int
+  createdAt DateTime @default(now())
 }
