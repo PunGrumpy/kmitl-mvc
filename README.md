@@ -1,5 +1,9 @@
 # 🦊 KMITL Exit Exam (MVC)
 
+| Preview 1                         | Preview 2                         | Preview 3                         |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| ![Preview](/public/preview-1.png) | ![Preview](/public/preview-2.png) | ![Preview](/public/preview-3.png) |
+
 ## 📄 Description
 
 This project is a robust RESTful API built with Elysia.js, following the enterprise MVC (Model-View-Controller) architecture. It leverages Prisma ORM for efficient database management and uses TypeScript to enhance type safety and developer experience.
