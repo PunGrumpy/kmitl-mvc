@@ -19,6 +19,9 @@
     "start": "nest start",
     "start:prod": "node dist/main"
   },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
