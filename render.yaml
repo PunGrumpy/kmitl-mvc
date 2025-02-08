@@ -1,0 +1,22 @@
+previews:
+  generation: automatic
+
+services:
+  - type: web
+    runtime: node
+    name: kmitl-mvc
+    repo: https://github.com/PunGrumpy/kmitl-mvc.git
+    numInstances: 1
+    region: singapore
+    plan: starter
+    branch: main
+    buildCommand: npm install
+    preDeployCommand: npm run build
+    startCommand: npm run start
+    autoDeploy: true 
+    maxShutdownDelaySeconds: 120 # Graceful shutdown
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: kmitl-mvc-db
+          property: connectionString
