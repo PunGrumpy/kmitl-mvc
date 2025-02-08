@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { User } from '@prisma/client'
-
-import { CatchPrismaError } from '@/lib/decorators/catch-prisma.decorator'
-import { PrismaService } from '@/lib/prisma/prisma.service'
+import { CatchPrismaError } from 'libs/decorators/catch-prisma.decorator'
+import { PrismaService } from 'libs/prisma/prisma.service'
 
 import { CreateUserDto, UpdateUserDto } from './user.dto'
 
