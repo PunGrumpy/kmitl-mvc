@@ -10,13 +10,13 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
-    "format": "prettier --write .",
-    "postinstall": "prisma generate",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "start": "nest start",
     "debug": "nest start --debug --watch",
     "dev": "nest start --watch",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "postinstall": "prisma generate",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "start": "nest start",
     "start:prod": "node dist/main"
   },
   "dependencies": {
