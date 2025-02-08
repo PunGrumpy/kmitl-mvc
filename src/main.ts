@@ -46,10 +46,6 @@ async function bootstrap() {
     `🚀 API Reference running on http://localhost:${port}/${pathDocs}`,
     'RunOn'
   )
-  Logger.log(
-    `🚀 OpenAPI Spec available at http://localhost:${port}/swagger-spec`,
-    'RunOn'
-  )
 }
 
 // Bootstrap the application
