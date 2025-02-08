@@ -7,17 +7,17 @@
   "author": "PunGrumpy",
   "scripts": {
     "build": "nest build",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
     "format": "prettier --write .",
+    "postinstall": "prisma generate",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "nest start",
     "start:debug": "nest start --debug --watch",
     "start:dev": "nest start --watch",
-    "start:prod": "node dist/main",
-    "db:generate": "prisma generate",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio",
-    "postinstall": "prisma generate"
+    "start:prod": "node dist/main"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -41,6 +41,7 @@
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
     "prettier-plugin-packagejson": "^2.5.8",

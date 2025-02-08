@@ -1,5 +1,6 @@
 // @ts-check
 import eslint from '@eslint/js'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
@@ -9,13 +10,12 @@ export default tseslint.config(
     ignores: ['eslint.config.mjs']
   },
   eslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+  ...tseslint.configs.recommended,
   eslintPluginPrettierRecommended,
   {
     languageOptions: {
       globals: {
-        ...globals.node,
-        ...globals.jest
+        ...globals.node
       },
       ecmaVersion: 5,
       sourceType: 'module',
@@ -26,10 +26,15 @@ export default tseslint.config(
     }
   },
   {
+    plugins: {
+      'simple-import-sort': simpleImportSort
+    },
     rules: {
+      'no-undef': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unused-vars': 'off',
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'warn'
     }
   }
 )

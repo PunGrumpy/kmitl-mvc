@@ -1,4 +1,5 @@
 import { Global, Module } from '@nestjs/common'
+
 import { PrismaService } from '@/src/lib/prisma/prisma.service'
 
 /**
