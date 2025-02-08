@@ -8,7 +8,7 @@ services:
     repo: https://github.com/PunGrumpy/kmitl-mvc.git
     numInstances: 1
     region: singapore
-    plan: starter
+    plan: free
     branch: main
     buildCommand: npm install
     preDeployCommand: npm run build
