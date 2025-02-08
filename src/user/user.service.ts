@@ -13,6 +13,8 @@ export class UserService {
   /**
    * Find all users
    * @returns {Promise<User[]>} - A promise that resolves to an array of users
+   * @throws {Error} - If an unexpected error occurs
+   * @throws {CatchPrismaError} - If a Prisma error occurs
    */
   @CatchPrismaError()
   async findAll(): Promise<User[]> {
@@ -23,6 +25,8 @@ export class UserService {
    * Find a user by id
    * @param {number} id - The user's id
    * @returns {Promise<User>} - A promise that resolves to a user or null
+   * @throws {Error} - If an unexpected error occurs
+   * @throws {CatchPrismaError} - If a Prisma error occurs
    */
   @CatchPrismaError({
     notFoundMessage: 'User not found'
@@ -37,8 +41,8 @@ export class UserService {
    * Create a new user
    * @param {CreateUserDto} data - The user's data
    * @returns {Promise<User>} - A promise that resolves to the created user
-   * @throws {BadRequestException} - If the user cannot be created
    * @throws {Error} - If an unexpected error occurs
+   * @throws {CatchPrismaError} - If a Prisma error occurs
    */
   @CatchPrismaError()
   async create(data: CreateUserDto): Promise<User> {
@@ -50,8 +54,8 @@ export class UserService {
    * @param {number} id - The user's id
    * @param {UpdateUserDto} data - The user's data
    * @returns {Promise<User>} - A promise that resolves to the updated user
-   * @throws {BadRequestException} - If the user cannot be updated
    * @throws {Error} - If an unexpected error occurs
+   * @throws {CatchPrismaError} - If a Prisma error occurs
    */
   @CatchPrismaError()
   async update(id: number, data: UpdateUserDto): Promise<User> {
@@ -65,8 +69,8 @@ export class UserService {
    * Delete a user
    * @param {number} id - The user's id
    * @returns {Promise<User>} - A promise that resolves to the deleted user
-   * @throws {BadRequestException} - If the user cannot be deleted
    * @throws {Error} - If an unexpected error occurs
+   * @throws {CatchPrismaError} - If a Prisma error occurs
    */
   @CatchPrismaError()
   async delete(id: number): Promise<User> {
