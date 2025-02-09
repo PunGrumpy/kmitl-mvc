@@ -1,0 +1,479 @@
+[
+  {
+    "id": 1,
+    "code": "394721",
+    "type": "POWER",
+    "durability": 76,
+    "repairCount": 3,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:33:04.400Z"
+  },
+  {
+    "id": 2,
+    "code": "408925",
+    "type": "POWER",
+    "durability": 2,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:46:26.902Z"
+  },
+  {
+    "id": 3,
+    "code": "353100",
+    "type": "POWER",
+    "durability": 97,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 4,
+    "code": "837524",
+    "type": "POWER",
+    "durability": 99,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 5,
+    "code": "113890",
+    "type": "POWER",
+    "durability": 78,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 6,
+    "code": "837359",
+    "type": "POWER",
+    "durability": 95,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 7,
+    "code": "206166",
+    "type": "POWER",
+    "durability": 77,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 8,
+    "code": "748808",
+    "type": "POWER",
+    "durability": 84,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 9,
+    "code": "393547",
+    "type": "POWER",
+    "durability": 95,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 10,
+    "code": "997320",
+    "type": "POWER",
+    "durability": 89,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 11,
+    "code": "227751",
+    "type": "POWER",
+    "durability": 70,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 12,
+    "code": "981811",
+    "type": "POWER",
+    "durability": 93,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 13,
+    "code": "159213",
+    "type": "POWER",
+    "durability": 75,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 14,
+    "code": "349973",
+    "type": "POWER",
+    "durability": 82,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 15,
+    "code": "267488",
+    "type": "POWER",
+    "durability": 87,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 16,
+    "code": "734689",
+    "type": "POWER",
+    "durability": 76,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 17,
+    "code": "459287",
+    "type": "POWER",
+    "durability": 80,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 18,
+    "code": "267684",
+    "type": "POWER",
+    "durability": 98,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 19,
+    "code": "190449",
+    "type": "POWER",
+    "durability": 97,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 20,
+    "code": "100736",
+    "type": "POWER",
+    "durability": 91,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 21,
+    "code": "634433",
+    "type": "STEALTH",
+    "durability": 63,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 22,
+    "code": "845266",
+    "type": "STEALTH",
+    "durability": 80,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 23,
+    "code": "252297",
+    "type": "STEALTH",
+    "durability": 85,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 24,
+    "code": "312307",
+    "type": "STEALTH",
+    "durability": 66,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 25,
+    "code": "662377",
+    "type": "STEALTH",
+    "durability": 83,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 26,
+    "code": "328111",
+    "type": "STEALTH",
+    "durability": 60,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 27,
+    "code": "573339",
+    "type": "STEALTH",
+    "durability": 91,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 28,
+    "code": "278788",
+    "type": "STEALTH",
+    "durability": 71,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 29,
+    "code": "618912",
+    "type": "STEALTH",
+    "durability": 87,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 30,
+    "code": "931653",
+    "type": "STEALTH",
+    "durability": 95,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 31,
+    "code": "868473",
+    "type": "STEALTH",
+    "durability": 51,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 32,
+    "code": "400957",
+    "type": "STEALTH",
+    "durability": 51,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 33,
+    "code": "922641",
+    "type": "STEALTH",
+    "durability": 56,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 34,
+    "code": "637330",
+    "type": "STEALTH",
+    "durability": 54,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 35,
+    "code": "887160",
+    "type": "STEALTH",
+    "durability": 70,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 36,
+    "code": "209318",
+    "type": "CONCEALMENT",
+    "durability": 2,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 37,
+    "code": "446574",
+    "type": "CONCEALMENT",
+    "durability": 54,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 38,
+    "code": "398721",
+    "type": "CONCEALMENT",
+    "durability": 1,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 39,
+    "code": "252786",
+    "type": "CONCEALMENT",
+    "durability": 0,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 40,
+    "code": "133348",
+    "type": "CONCEALMENT",
+    "durability": 58,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 41,
+    "code": "849427",
+    "type": "CONCEALMENT",
+    "durability": 68,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 42,
+    "code": "891722",
+    "type": "CONCEALMENT",
+    "durability": 32,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 43,
+    "code": "765604",
+    "type": "CONCEALMENT",
+    "durability": 96,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 44,
+    "code": "899458",
+    "type": "CONCEALMENT",
+    "durability": 40,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 45,
+    "code": "893007",
+    "type": "CONCEALMENT",
+    "durability": 11,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 46,
+    "code": "608909",
+    "type": "CONCEALMENT",
+    "durability": 25,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 47,
+    "code": "472755",
+    "type": "CONCEALMENT",
+    "durability": 0,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 48,
+    "code": "424719",
+    "type": "CONCEALMENT",
+    "durability": 42,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 49,
+    "code": "978222",
+    "type": "CONCEALMENT",
+    "durability": 41,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 50,
+    "code": "795677",
+    "type": "CONCEALMENT",
+    "durability": 24,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 51,
+    "code": "858381",
+    "type": "POWER",
+    "durability": 75,
+    "repairCount": 1,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:26:08.703Z"
+  },
+  {
+    "id": 52,
+    "code": "648707",
+    "type": "STEALTH",
+    "durability": 40,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  },
+  {
+    "id": 53,
+    "code": "999954",
+    "type": "CONCEALMENT",
+    "durability": 73,
+    "repairCount": 0,
+    "createdAt": "2025-02-09T04:25:03.771Z",
+    "updatedAt": "2025-02-09T04:25:03.771Z"
+  }
+]
