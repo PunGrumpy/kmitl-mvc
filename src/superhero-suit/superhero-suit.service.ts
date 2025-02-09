@@ -2,6 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common'
 import { SuitType, SuperheroSuit } from '@prisma/client'
 import { CatchPrismaError } from 'libs/decorators/catch-prisma.decorator'
 import { PrismaService } from 'libs/prisma/prisma.service'
+import { SuitDurabilityValidator } from 'libs/validators/suit-durability.validator'
 
 import {
   CreateSuitDto,
@@ -11,7 +12,10 @@ import {
 
 @Injectable()
 export class SuperheroSuitService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly durabilityValidator: SuitDurabilityValidator
+  ) {}
 
   /**
    * Validates suit durability based on type-specific rules
@@ -21,34 +25,12 @@ export class SuperheroSuitService {
     type: SuitType,
     durability: number
   ): SuitValidationResult {
-    const result: SuitValidationResult = {
-      isValid: true,
-      message: 'Suit meets durability requirements',
-      currentDurability: durability
+    const result = this.durabilityValidator.validateDurability(type, durability)
+    return {
+      isValid: result.isValid,
+      message: result.message,
+      currentDurability: result.currentDurability
     }
-
-    switch (type) {
-      case SuitType.POWER:
-        if (durability < 70) {
-          result.isValid = false
-          result.message = `Power suit durability must be at least 70 (current: ${durability})`
-        }
-        break
-      case SuitType.STEALTH:
-        if (durability < 50) {
-          result.isValid = false
-          result.message = `Stealth suit durability must be at least 50 (current: ${durability})`
-        }
-        break
-      case SuitType.CONCEALMENT:
-        if (durability % 10 === 3 || durability % 10 === 7) {
-          result.isValid = false
-          result.message = `Concealment suit durability cannot end in 3 or 7 (current: ${durability})`
-        }
-        break
-    }
-
-    return result
   }
 
   /**
