@@ -20,7 +20,7 @@ This project follows the **MVC (Model-View-Controller)** design pattern with cle
 
 ### 🏗️ Model Layer
 
-- **`prisma/schema.prisma`**  
+- **`db/schema.prisma`**  
   Defines the data structure for superhero suits, including suit ID, type, and durability level.
 - **`libs/interfaces/suit-validation.interface.ts`**  
   Specifies interfaces for validating each type of suit.
