@@ -9,6 +9,7 @@
     "build": "nest build",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:reset": "prisma migrate reset",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "debug": "nest start --debug --watch",
