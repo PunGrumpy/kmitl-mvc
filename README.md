@@ -1,6 +1,6 @@
-# 🦊 KMITL Exit Examination with MVC Pattern
+# 🦸🏻 Super Hero Suit Management System (KMITL Exit Exam with MVC Pattern)
 
-![Banner](https://prompthero.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaWxtWVRJeE16Sm1NQzB4Wm1SaUxUUTJZbUV0WVRGak55MDBNVGszTVRnMFltSTFaREFHT2daRlZBPT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2JfaWQifX0=--8f458bef5a836775ceba0325868f2398808cf8e5/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBPZ2wzWldKd09oUnlaWE5wZW1WZmRHOWZiR2x0YVhSYkIya0NBQWd3T2dwellYWmxjbnNKT2hOemRXSnpZVzF3YkdWZmJXOWtaVWtpQjI5dUJqb0dSVlE2Q25OMGNtbHdWRG9PYVc1MFpYSnNZV05sVkRvTWNYVmhiR2wwZVdsZiIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--9e9280d525ba1fc2f95c971c0fbcb4a2ca8b55dd/prompthero-prompt-72110125fc4.png)
+![Preview](./public/swagger-homepage.png)
 
 ## 🩻 Technologies Stack
 
@@ -10,9 +10,49 @@
 - 🐘 PostgreSQL - A powerful, open-source object-relational database system
 - 💅 Prettier - An opinionated code formatter
 - 🧹 ESLint - A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code
-- 🍞 Bun - A fast JavaScript/TypeScript runtime  
+- 🍞 Bun - A fast JavaScript/TypeScript runtime
 - 🦢 Swagger - An open-source software framework backed by a large ecosystem of tools that helps developers design, build, document, and consume RESTful web services
 - 🔮 Scalars - A API reference to over Swagger UI
+
+## 📦 Project Structure
+
+This project follows the **MVC (Model-View-Controller)** design pattern with clear separation of responsibilities:
+
+### 🏗️ Model Layer
+
+- **`prisma/schema.prisma`**  
+  Defines the data structure for superhero suits, including suit ID, type, and durability level.
+- **`libs/interfaces/suit-validation.interface.ts`**  
+  Specifies interfaces for validating each type of suit.
+- **`libs/validators/suit-durability.validator.ts`**  
+  Contains the logic to validate the durability of each suit type based on predefined conditions.
+
+### 👀 View Layer (API Endpoints)
+
+- **`src/superhero-suit/superhero-suit.controller.ts`**  
+  Manages data exchange through API endpoints for handling superhero suit operations.
+- **`src/superhero-suit/superhero-suit.dto.ts`**  
+  Specifies the data transfer format for input and output via the API.
+
+### 🎮 Service Layer (Business Logic)
+
+- **`src/superhero-suit/superhero-suit.service.ts`**  
+  Implements the business logic for creating, validating, and repairing superhero suits.
+- **`src/superhero-suit/superhero-suit.module.ts`**  
+  Connects and organizes the different components within the superhero suit module.
+
+### 🛠️ Infrastructure Layer
+
+- **`libs/prisma/prisma.service.ts`**  
+  Manages the database connections using Prisma.
+- **`libs/decorators/catch-prisma.decorator.ts`**  
+  Handles errors that occur during database operations.
+
+### 🌱 Data Seeding
+
+- **`db/seed.ts`**  
+  Generates sample data for superhero suits.  
+  _Requirement: At least 50 total suits, with a minimum of 10 suits per suit type._
 
 ## 🧢 How To Use
 
