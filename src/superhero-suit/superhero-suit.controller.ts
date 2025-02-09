@@ -11,7 +11,7 @@ import {
 import { SuperheroSuitService } from './superhero-suit.service'
 
 @Controller('suits')
-@ApiTags('🦸🏻Superhero Suits')
+@ApiTags('🦸🏻 Superhero Suits')
 export class SuperheroSuitController {
   constructor(private readonly suitService: SuperheroSuitService) {}
 
